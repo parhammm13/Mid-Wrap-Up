@@ -1,12 +1,22 @@
+import java.util.UUID;
+import java.util.Random;
 public class Lecture5Exercises {
 
     /*
      *   implement a function to create a random password with
-     *   given length using lower case letters
+     *   given length using lower case letterss
      *   lecture 5 page 14
      */
     public String weakPassword(int length) {
-        return null;
+        String letters = "abcdefghijklmnopqrstuvwxyz";
+        StringBuilder Sb = new StringBuilder(length);
+        Random random = new Random();
+        for(int i = 0 ; i < length ; i++){
+            Sb.append(letters.charAt(random.nextInt(letters.length())));
+        }
+        String weakpassword = Sb.toString();
+//        System.out.println(weakpassword);
+        return weakpassword;
     }
 
     /*
@@ -15,6 +25,7 @@ public class Lecture5Exercises {
      *   lecture 5 page 14
      */
     public String strongPassword(int length) throws Exception {
+
         return null;
     }
 
@@ -27,6 +38,13 @@ public class Lecture5Exercises {
      *   lecture 5 page 17
      */
     public boolean isFiboBin(int n) {
-        return false;
+        int a = 0;
+        int b = 1;
+        while (b < n){
+                int temp = b;
+                b = a + b;
+                a = temp;
+        }
+        return b==n || n ==0;
     }
 }
